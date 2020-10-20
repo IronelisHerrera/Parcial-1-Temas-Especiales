@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements list_fragment.Che
         String [] array_description = getResources().getStringArray(R.array.frontend_description);
         show_dec.setText(array_description[position_id]);
         when_click_vertical_fragment();
+
     }
 
     //portrait function

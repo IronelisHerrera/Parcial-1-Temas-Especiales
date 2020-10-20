@@ -28,5 +28,6 @@ public class description_fragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_description_fragment, container, false);
+        //get the intent and put it in the text view!!!
     }
 }
