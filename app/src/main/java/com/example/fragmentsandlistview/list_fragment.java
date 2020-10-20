@@ -32,6 +32,8 @@ public class list_fragment extends ListFragment {
         ArrayAdapter<String> item_list_adapter = new ArrayAdapter<>(this.getActivity(), android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.frontend));
         setListAdapter(item_list_adapter);
 
+        get_current_element_position();
+
 
     }
     public interface ChessPieceListener {
@@ -47,5 +49,18 @@ public class list_fragment extends ListFragment {
     @Override
     public void onListItemClick(@NonNull @NotNull ListView l, @NonNull @NotNull View v, int position, long id) {
         show_description.when_list_clicked(position);
+    }
+
+    public void get_current_element_position(){
+
+      if(this.getActivity().findViewById(R.id.fragment_list) == null){
+          show_description.when_list_clicked(0);
+      }
+      //TODO: condición: si esta vertical y lo pongo horizontal poner la selección en 0 nuevamente.
+      //TODO: Si está horizontal poner la selección en 0.
+      //TODO: Poner flecha regresar.
+      //TODO: cambiar colores.
+      //TODO: cambiar nombre al la app. (Done)
+
     }
 }

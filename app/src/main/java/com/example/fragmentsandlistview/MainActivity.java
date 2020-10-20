@@ -4,6 +4,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import java.util.Objects;
@@ -56,8 +57,6 @@ public class MainActivity extends AppCompatActivity implements list_fragment.Che
         }
 
     }
-//    public get_current_element_position(){
-//
-//    }
+
 
 }
