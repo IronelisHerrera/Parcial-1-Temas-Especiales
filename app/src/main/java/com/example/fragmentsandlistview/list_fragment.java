@@ -59,7 +59,7 @@ public class list_fragment extends ListFragment {
       //TODO: condición: si esta vertical y lo pongo horizontal poner la selección en 0 nuevamente.
       //TODO: Si está horizontal poner la selección en 0.
       //TODO: Poner flecha regresar.
-      //TODO: cambiar colores.
+      //TODO: cambiar colores. (Done)
       //TODO: cambiar nombre al la app. (Done)
 
     }
