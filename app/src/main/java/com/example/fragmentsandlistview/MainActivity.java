@@ -14,8 +14,8 @@ public class MainActivity extends AppCompatActivity implements list_fragment.Che
     private TextView show_dec;
     LinearLayout vertical;
     LinearLayout horizontal;
-    private FragmentManager is_vertical;
-    private FragmentManager is_horizontal;
+    private FragmentManager orientation_manager;
+
 
 
     @Override
@@ -29,34 +29,33 @@ public class MainActivity extends AppCompatActivity implements list_fragment.Che
     @Override
     public void when_list_clicked(int position_id) {
         String [] array_description = getResources().getStringArray(R.array.frontend_description);
-        show_dec.setText(array_description[position_id]);
         when_click_vertical_fragment();
+        show_dec.setText(array_description[position_id]);
+
 
     }
 
-    //portrait function
-
     public void check_orientation(){
-        vertical= findViewById(R.id.main_activity_horizontal);
-        horizontal = findViewById(R.id.main_activity_vertical);
-        if(vertical == null){
-            is_vertical = this.getSupportFragmentManager();
-            is_vertical.beginTransaction().show(Objects.requireNonNull(is_vertical.findFragmentById(R.id.fragment_list))).hide(Objects.requireNonNull(is_vertical.findFragmentById(R.id.fragment_description))).commit();
-            return;
+        vertical= findViewById(R.id.main_activity_vertical);
+        horizontal = findViewById(R.id.main_activity_horizontal);
+        if(horizontal == null){
+            orientation_manager = this.getSupportFragmentManager();
+            orientation_manager.beginTransaction().show(Objects.requireNonNull(orientation_manager.findFragmentById(R.id.fragment_list))).hide(Objects.requireNonNull(orientation_manager.findFragmentById(R.id.fragment_description))).commit();
+           return;
         }
-       if (horizontal == null){
-           is_horizontal = this.getSupportFragmentManager();
-           is_horizontal.beginTransaction().show(Objects.requireNonNull(is_horizontal.findFragmentById(R.id.fragment_description))).commit();
+       if (vertical == null){
+           orientation_manager = this.getSupportFragmentManager();
+           orientation_manager.beginTransaction().show(Objects.requireNonNull(orientation_manager.findFragmentById(R.id.fragment_list))).show(Objects.requireNonNull(orientation_manager.findFragmentById(R.id.fragment_description))).commit();
        }
     }
 
-    public void when_click_vertical_fragment(){
-        vertical = findViewById(R.id.main_activity_horizontal);
-        is_horizontal = this.getSupportFragmentManager();
-        if(vertical == null){
-            is_horizontal.beginTransaction().hide(Objects.requireNonNull(is_vertical.findFragmentById(R.id.fragment_list))).show(Objects.requireNonNull(is_horizontal.findFragmentById(R.id.fragment_description))).addToBackStack(null).commit();
-        }
 
+    public void when_click_vertical_fragment(){
+        horizontal = findViewById(R.id.main_activity_horizontal);
+
+        if(horizontal == null){
+            orientation_manager.beginTransaction().hide(Objects.requireNonNull(orientation_manager.findFragmentById(R.id.fragment_list))).show(Objects.requireNonNull(orientation_manager.findFragmentById(R.id.fragment_description))).addToBackStack(null).commit();
+        }
     }
 
 

@@ -21,7 +21,8 @@
         <fragment
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:name="com.example.fragmentsandlistview.description_fragment" android:id="@+id/fragment_description"
+                android:name="com.example.fragmentsandlistview.description_fragment"
+                android:id="@+id/fragment_description"
                 android:layout_weight="4" tools:layout="@layout/fragment_description_fragment"/>
     </LinearLayout>
 </LinearLayout>
